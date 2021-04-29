@@ -1,2 +1,4 @@
-const isTS: boolean = true;
-console.log(`Welcome to TypeScript =>  ${isTS}`);
+import { Model } from "./model";
+import { View } from "./view";
+import { Controller } from "./controller";
+const task = new Controller(new View(), new Model());
