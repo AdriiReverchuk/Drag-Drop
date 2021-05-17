@@ -19,7 +19,7 @@ export class View {
 		document.body.append(this.form);
 	}
 	renderTastks(fun: ModelInterface) {
-		fun.getData().forEach((data) => {
+		fun.getData().forEach((data: DataInterface) => {
 			this.createTaskContainer(data);
 		});
 	}
