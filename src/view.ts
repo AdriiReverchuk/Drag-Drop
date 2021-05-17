@@ -1,3 +1,6 @@
+import { DataInterface } from "./model";
+import { ModelInterface } from "./model";
+
 export class View {
 	form: HTMLElement;
 	containerPlaned: HTMLElement;
@@ -14,6 +17,23 @@ export class View {
 			this.containerData,
 		);
 		document.body.append(this.form);
+	}
+	renderTastks(fun: ModelInterface) {
+		fun.getData().forEach((data) => {
+			this.createTaskContainer(data);
+		});
+	}
+	createTaskContainer(data: DataInterface): void {
+		const container = this.createElement("div", "task-container");
+		const title = this.createElement("h3", "task-title", data.title);
+		const description = this.createElement(
+			"p",
+			"description",
+			data.description,
+		);
+		const date = this.createElement("p", "date", data.deadline);
+		container.append(title, description, date);
+		this.getElement(".container")?.append(container);
 	}
 	createElement = (tag: string, cl?: string, text?: string) => {
 		const element: HTMLElement = document.createElement(tag);
