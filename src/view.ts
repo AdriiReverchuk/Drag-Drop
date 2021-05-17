@@ -1,5 +1,4 @@
 import { DataInterface } from "./model";
-import { ModelInterface } from "./model";
 
 export class View {
 	form: HTMLElement;
@@ -18,8 +17,8 @@ export class View {
 		);
 		document.body.append(this.form);
 	}
-	renderTastks(fun: ModelInterface) {
-		fun.getData().forEach((data: DataInterface) => {
+	renderTastks(arr: any) {
+		arr.forEach((data: DataInterface) => {
 			this.createTaskContainer(data);
 		});
 	}
