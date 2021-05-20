@@ -5,7 +5,7 @@ export interface DataInterface {
 	id: number;
 	title: string;
 	description: string;
-	deadline: string;
+	deadline: Date;
 }
 export class Model {
 	private data: DataInterface[];
@@ -13,15 +13,21 @@ export class Model {
 		this.data = [
 			{
 				id: 1,
-				title: "firstTask",
+				title: "First Task",
 				description: "dsfsdf",
-				deadline: "20.04.2020",
+				deadline: new Date(2021, 3, 12),
 			},
 			{
-				id: 1,
-				title: "secondTask",
+				id: 2,
+				title: "Second Task",
 				description: "dsfsdf",
-				deadline: "25.05.2020",
+				deadline: new Date(2021, 9, 12),
+			},
+			{
+				id: 3,
+				title: "Third Task",
+				description: "dsfsdf",
+				deadline: new Date(2021, 5, 12),
 			},
 		];
 		console.log(this.data);

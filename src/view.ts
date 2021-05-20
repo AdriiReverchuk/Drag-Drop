@@ -30,7 +30,8 @@ export class View {
 			"description",
 			data.description,
 		);
-		const date = this.createElement("p", "date", data.deadline);
+		container.setAttribute("draggable", "true");
+		const date = this.createElement("p", "date", data.deadline.toDateString());
 		container.append(title, description, date);
 		this.getElement(".container")?.append(container);
 	}
