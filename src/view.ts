@@ -26,7 +26,7 @@ export class View {
          const elem = <HTMLElement>evt.target;
          if ((<HTMLElement>elem.parentNode).className === "task-container") {
             const idEl = (<HTMLElement>elem.parentNode).id;
-            const draggableElement = this.getElement(`#${idEl}`);
+            const draggableElement = document.getElementById(idEl);
             draggableElement?.addEventListener("dragstart", this.onDragStart);
          }
       });
