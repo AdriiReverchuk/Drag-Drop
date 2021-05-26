@@ -7,9 +7,6 @@ export class Controller {
 		this.view = view;
 		this.model = model;
 		this.view.renderTastks(this.model.getData());
+		this.view.dragAndDrop();
 	}
-	dragAndDrop() {}
-	onDragStart = (event: Event) => {
-		console.log("dragStart");
-	};
 }
