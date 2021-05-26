@@ -39,14 +39,14 @@ export class View {
          throw new Error("Drop zone not found");
       }
    }
-   onDragStart = (event: DragEvent): any => {
+   onDragStart = (event: DragEvent) => {
       event.dataTransfer?.setData("text/plain", (event.target as Element).id);
       console.log("dragStart");
    };
    dragOver = (event: Event) => {
       event.preventDefault();
    };
-   onDrop = (event: DragEvent): any => {
+   onDrop = (event: DragEvent) => {
       const id = event.dataTransfer?.getData("text/plain");
       if (id) {
          const draggableElem = document.getElementById(id);
